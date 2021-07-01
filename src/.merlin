@@ -1,0 +1,11 @@
+EXCLUDE_QUERY_DIR
+B ../_build/default/lib/ecs/.ecs.objs/byte
+B ../_build/default/lib/gfx/.gfx.objs/byte
+B ../_build/default/src/.game.objs/byte
+S ../lib/ecs
+S ../lib/gfx
+S .
+S component
+S io
+S system
+FLG -open Game__ -w -40

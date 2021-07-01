@@ -1,0 +1,4 @@
+EXCLUDE_QUERY_DIR
+B ../../_build/default/lib/ecs/.ecs.objs/byte
+S .
+FLG -open Ecs -w -40

@@ -1,0 +1,4 @@
+EXCLUDE_QUERY_DIR
+B ../../_build/default/lib/gfx/.gfx.objs/byte
+S .
+FLG -open Gfx__ -w -40

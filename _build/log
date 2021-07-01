@@ -1,0 +1,193 @@
+# dune build
+# OCAMLPARAM: unset
+# Workspace root: /home/jovyan/PFA/tp7
+$ /usr/bin/nproc > /tmp/duneb5b367.output 2> /dev/null
+# Auto-detected concurrency: 32
+# disable binary cache
+$ /usr/bin/ocamlc.opt -config > /tmp/duneef4488.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Release
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = None
+#  ; ocaml_bin = External "/usr/bin"
+#  ; ocaml = External "/usr/bin/ocaml"
+#  ; ocamlc = External "/usr/bin/ocamlc.opt"
+#  ; ocamlopt = Some External "/usr/bin/ocamlopt.opt"
+#  ; ocamldep = External "/usr/bin/ocamldep.opt"
+#  ; ocamlmklib = External "/usr/bin/ocamlmklib.opt"
+#  ;
+#  env =
+#    map
+#      {
+#      "CAML_LD_LIBRARY_PATH" :
+#        "/home/jovyan/PFA/tp7/_build/install/default/lib/stublibs"
+#      ; "DUNE_CONFIGURATOR" : "/usr/bin/ocamlc.opt"
+#      ; "INSIDE_DUNE" : "1"
+#      ; "MANPATH" : "/home/jovyan/PFA/tp7/_build/install/default/bin"
+#      ;
+#      "OCAMLFIND_IGNORE_DUPS_IN" :
+#        "/home/jovyan/PFA/tp7/_build/install/default/lib"
+#      ; "OCAMLPATH" : "/home/jovyan/PFA/tp7/_build/install/default/lib"
+#      ; "OCAML_COLOR" : "always"
+#      ; "OPAMCOLOR" : "always"
+#      }
+#  ; findlib_path = [ External "/usr/lib/ocaml" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; opam_vars = map {}
+#  ;
+#  ocaml_config =
+#    { version = "4.08.1"
+#    ; standard_library_default = "/usr/lib/ocaml"
+#    ; standard_library = "/usr/lib/ocaml"
+#    ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#    ; ccomp_type = "cc"
+#    ; c_compiler = "x86_64-linux-gnu-gcc"
+#    ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#    ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#    ;
+#    bytecomp_c_compiler =
+#      [ "x86_64-linux-gnu-gcc"
+#      ; "-O2"
+#      ; "-fno-strict-aliasing"
+#      ; "-fwrapv"
+#      ; "-fPIC"
+#      ; "-D_FILE_OFFSET_BITS=64"
+#      ; "-D_REENTRANT"
+#      ]
+#    ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#    ;
+#    native_c_compiler =
+#      [ "x86_64-linux-gnu-gcc"
+#      ; "-O2"
+#      ; "-fno-strict-aliasing"
+#      ; "-fwrapv"
+#      ; "-D_FILE_OFFSET_BITS=64"
+#      ; "-D_REENTRANT"
+#      ]
+#    ; native_c_libraries = [ "-lm"; "-ldl" ]
+#    ; cc_profile = [ "-pg" ]
+#    ; architecture = "amd64"
+#    ; model = "default"
+#    ; int_size = 63
+#    ; word_size = 64
+#    ; system = "linux"
+#    ; asm = [ "x86_64-linux-gnu-as" ]
+#    ; asm_cfi_supported = true
+#    ; with_frame_pointers = false
+#    ; ext_exe = ""
+#    ; ext_obj = ".o"
+#    ; ext_asm = ".s"
+#    ; ext_lib = ".a"
+#    ; ext_dll = ".so"
+#    ; os_type = "Unix"
+#    ; default_executable_name = "a.out"
+#    ; systhread_supported = true
+#    ; host = "x86_64-pc-linux-gnu"
+#    ; target = "x86_64-pc-linux-gnu"
+#    ; profiling = true
+#    ; flambda = false
+#    ; spacetime = false
+#    ; safe_string = false
+#    ; exec_magic_number = "Caml1999X025"
+#    ; cmi_magic_number = "Caml1999I025"
+#    ; cmo_magic_number = "Caml1999O025"
+#    ; cma_magic_number = "Caml1999A025"
+#    ; cmx_magic_number = "Caml1999Y025"
+#    ; cmxa_magic_number = "Caml1999Z025"
+#    ; ast_impl_magic_number = "Caml1999M025"
+#    ; ast_intf_magic_number = "Caml1999N025"
+#    ; cmxs_magic_number = "Caml1999D025"
+#    ; cmt_magic_number = "Caml1999T025"
+#    ; natdynlink_supported = true
+#    ; supports_shared_libraries = true
+#    ; windows_unicode = false
+#    }
+#  ;
+#  which =
+#    map
+#      { "ocaml" : Some External "/usr/bin/ocaml"
+#      ; "ocamlc" : Some External "/usr/bin/ocamlc.opt"
+#      ; "ocamlobjinfo" : Some External "/usr/bin/ocamlobjinfo.opt"
+#      }
+#  }
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -w -49 -nopervasives -nostdlib -g -bin-annot -I lib/ecs/.ecs.objs/byte -no-alias-deps -o lib/ecs/.ecs.objs/byte/ecs.cmo -c -impl lib/ecs/ecs.ml-gen)
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -intf lib/ecs/component.mli) > _build/default/lib/ecs/.ecs.objs/component.mli.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -intf lib/ecs/entity.mli) > _build/default/lib/ecs/.ecs.objs/entity.mli.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl lib/ecs/component.ml) > _build/default/lib/ecs/.ecs.objs/component.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl lib/ecs/entity.ml) > _build/default/lib/ecs/.ecs.objs/entity.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl lib/ecs/system.ml) > _build/default/lib/ecs/.ecs.objs/system.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -intf lib/gfx/gfx.mli) > _build/default/lib/gfx/.gfx.objs/gfx.mli.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl lib/gfx/gfx_base.ml) > _build/default/lib/gfx/.gfx.objs/gfx_base.ml.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -w -49 -nopervasives -nostdlib -g -bin-annot -I lib/gfx/.gfx.objs/byte -no-alias-deps -o lib/gfx/.gfx.objs/byte/gfx__.cmo -c -impl lib/gfx/gfx__.ml-gen)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -w -49 -nopervasives -nostdlib -g -bin-annot -I lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte -no-alias-deps -o lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte/gfx__gfx_jsoo__.cmo -c -impl lib/gfx/gfx_jsoo/gfx__gfx_jsoo__.ml-gen)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -w -49 -nopervasives -nostdlib -g -bin-annot -I src/.game.objs/byte -no-alias-deps -o src/.game.objs/byte/game__.cmo -c -impl src/game__.ml-gen)
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/game.ml) > _build/default/src/.game.objs/game.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/system/collision_system.ml) > _build/default/src/.game.objs/collision_system.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/component/component_defs.ml) > _build/default/src/.game.objs/component_defs.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/system/draw_system.ml) > _build/default/src/.game.objs/draw_system.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/system/control_system.ml) > _build/default/src/.game.objs/control_system.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/final.ml) > _build/default/src/.game.objs/final.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/system/force_system.ml) > _build/default/src/.game.objs/force_system.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -intf src/io/input_handler.mli) > _build/default/src/.game.objs/input_handler.mli.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/game_state.ml) > _build/default/src/.game.objs/game_state.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/system/move_system.ml) > _build/default/src/.game.objs/move_system.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/piege.ml) > _build/default/src/.game.objs/piege.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/component/rect.ml) > _build/default/src/.game.objs/rect.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/player.ml) > _build/default/src/.game.objs/player.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/component/texture.ml) > _build/default/src/.game.objs/texture.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/system/system_defs.ml) > _build/default/src/.game.objs/system_defs.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/component/vector.ml) > _build/default/src/.game.objs/vector.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/io/input_handler.ml) > _build/default/src/.game.objs/input_handler.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/wall.ml) > _build/default/src/.game.objs/wall.ml.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I lib/ecs/.ecs.objs/byte -no-alias-deps -open Ecs -o lib/ecs/.ecs.objs/byte/ecs__Entity.cmi -c -intf lib/ecs/entity.mli)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I lib/gfx/.gfx.objs/byte -no-alias-deps -open Gfx__ -o lib/gfx/.gfx.objs/byte/gfx__Gfx_base.cmo -c -impl lib/gfx/gfx_base.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I lib/ecs/.ecs.objs/byte -no-alias-deps -open Ecs -o lib/ecs/.ecs.objs/byte/ecs__Component.cmi -c -intf lib/ecs/component.mli)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I lib/ecs/.ecs.objs/byte -no-alias-deps -open Ecs -o lib/ecs/.ecs.objs/byte/ecs__System.cmo -c -impl lib/ecs/system.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I lib/gfx/.gfx.objs/byte -no-alias-deps -opaque -open Gfx__ -o lib/gfx/.gfx.objs/byte/gfx.cmi -c -intf lib/gfx/gfx.mli)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I lib/ecs/.ecs.objs/byte -intf-suffix .ml -no-alias-deps -open Ecs -o lib/ecs/.ecs.objs/byte/ecs__Entity.cmo -c -impl lib/ecs/entity.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I lib/ecs/.ecs.objs/byte -intf-suffix .ml -no-alias-deps -open Ecs -o lib/ecs/.ecs.objs/byte/ecs__Component.cmo -c -impl lib/ecs/component.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Input_handler.cmi -c -intf src/io/input_handler.mli)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Game_state.cmo -c -impl src/game_state.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Texture.cmo -c -impl src/component/texture.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -a -o lib/ecs/ecs.cma lib/ecs/.ecs.objs/byte/ecs.cmo lib/ecs/.ecs.objs/byte/ecs__Entity.cmo lib/ecs/.ecs.objs/byte/ecs__System.cmo lib/ecs/.ecs.objs/byte/ecs__Component.cmo)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Vector.cmo -c -impl src/component/vector.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -intf-suffix .ml -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Input_handler.cmo -c -impl src/io/input_handler.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Control_system.cmo -c -impl src/system/control_system.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Rect.cmo -c -impl src/component/rect.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Component_defs.cmo -c -impl src/component/component_defs.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Collision_system.cmo -c -impl src/system/collision_system.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Draw_system.cmo -c -impl src/system/draw_system.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Force_system.cmo -c -impl src/system/force_system.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Move_system.cmo -c -impl src/system/move_system.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__System_defs.cmo -c -impl src/system/system_defs.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Player.cmo -c -impl src/player.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Wall.cmo -c -impl src/wall.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Final.cmo -c -impl src/final.ml)
+> File "src/final.ml", line 6, characters 8-13:
+> 6 |     let owner = Owner.get self in
+>             ^^^^^
+> Warning 26: unused variable owner.
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game__Piege.cmo -c -impl src/piege.ml)
+> File "src/piege.ml", line 6, characters 8-13:
+> 6 |     let owner = Owner.get self in
+>             ^^^^^
+> Warning 26: unused variable owner.
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I src/.game.objs/byte -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -no-alias-deps -open Game__ -o src/.game.objs/byte/game.cmo -c -impl src/game.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -a -o src/game.cma src/.game.objs/byte/game__.cmo src/.game.objs/byte/game__Vector.cmo src/.game.objs/byte/game__Rect.cmo src/.game.objs/byte/game__Texture.cmo src/.game.objs/byte/game__Component_defs.cmo src/.game.objs/byte/game__Collision_system.cmo src/.game.objs/byte/game__Input_handler.cmo src/.game.objs/byte/game__Control_system.cmo src/.game.objs/byte/game__Game_state.cmo src/.game.objs/byte/game__Draw_system.cmo src/.game.objs/byte/game__Force_system.cmo src/.game.objs/byte/game__Move_system.cmo src/.game.objs/byte/game__System_defs.cmo src/.game.objs/byte/game__Wall.cmo src/.game.objs/byte/game__Player.cmo src/.game.objs/byte/game__Piege.cmo src/.game.objs/byte/game__Final.cmo src/.game.objs/byte/game.cmo)
+$ (cd _build/default && /usr/bin/ocamlopt.opt -o .ppx/7b799aed44581cc79b02033532c5f775/ppx.exe -w -24 -I /usr/lib/ocaml/compiler-libs -I /usr/lib/ocaml/js_of_ocaml-ppx -I /usr/lib/ocaml/ocaml-migrate-parsetree -I /usr/lib/ocaml/ppx_derivers -I /usr/lib/ocaml/result /usr/lib/ocaml/compiler-libs/ocamlcommon.cmxa /usr/lib/ocaml/result/result.cmxa /usr/lib/ocaml/ppx_derivers/ppx_derivers.cmxa /usr/lib/ocaml/ocaml-migrate-parsetree/migrate_parsetree.cmxa /usr/lib/ocaml/js_of_ocaml-ppx/ppx_js.cmxa .ppx/7b799aed44581cc79b02033532c5f775/_ppx.ml)
+$ (cd _build/default && .ppx/7b799aed44581cc79b02033532c5f775/ppx.exe -o prog/game_js.pp.ml --impl prog/game_js.ml --dump-ast)
+$ (cd _build/default && .ppx/7b799aed44581cc79b02033532c5f775/ppx.exe --cookie 'library-name="gfx_jsoo"' -o lib/gfx/gfx_jsoo/gfx.pp.ml --impl lib/gfx/gfx_jsoo/gfx.ml --dump-ast)
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl prog/game_js.pp.ml) > _build/default/prog/.game_js.eobjs/game_js.pp.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl lib/gfx/gfx_jsoo/gfx.pp.ml) > _build/default/lib/gfx/gfx_jsoo/.gfx_jsoo.objs/gfx.pp.ml.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I prog/.game_js.eobjs/byte -I /usr/lib/ocaml/bytes -I /usr/lib/ocaml/js_of_ocaml -I /usr/lib/ocaml/uchar -I lib/ecs/.ecs.objs/byte -I lib/ecs/.ecs.objs/native -I lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte -I lib/gfx/gfx_jsoo/.gfx_jsoo.objs/native -I src/.game.objs/byte -I src/.game.objs/native -no-alias-deps -o prog/.game_js.eobjs/byte/dune__exe__Game_js.cmo -c -impl prog/game_js.pp.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -bin-annot -I lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte -I /usr/lib/ocaml/bytes -I /usr/lib/ocaml/js_of_ocaml -I /usr/lib/ocaml/uchar -I lib/gfx/.gfx.objs/byte -I lib/gfx/.gfx.objs/native -intf-suffix .ml -no-alias-deps -open Gfx__gfx_jsoo__ -o lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte/gfx.cmo -c -impl lib/gfx/gfx_jsoo/gfx.pp.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -a -o lib/gfx/gfx_jsoo/gfx_jsoo.cma lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte/gfx__gfx_jsoo__.cmo lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte/gfx__.cmo lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte/gfx__Gfx_base.cmo lib/gfx/gfx_jsoo/.gfx_jsoo.objs/byte/gfx.cmo)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w -40 -g -o prog/game_js.bc /usr/lib/ocaml/js_of_ocaml/js_of_ocaml.cma lib/ecs/ecs.cma lib/gfx/gfx_jsoo/gfx_jsoo.cma src/game.cma prog/.game_js.eobjs/byte/dune__exe__Game_js.cmo)
+$ (cd _build/default/prog && /usr/bin/js_of_ocaml -I . --file=../resources/files -o game_js.bc.js --no-runtime /usr/lib/ocaml/js_of_ocaml-compiler/runtime.js game_js.bc)
