@@ -1,0 +1,13 @@
+1. Le patron de conception ECS (entity-component-system) consiste à séparer les entités et les 
+composants pour avoir plus de flexibiliter. Les fichiers de system font le pont entre ces deux types
+de fichiers pour créer un environement avec une mechanique. On pourra créer les élément du jeu
+grâce à tous ces fichiers qu'on aura déjà prédéfini. Par exemple dans notre jeu de plateformes, 
+le system nous met une force de gravité, des collisions entre éléments, un systeme d'affichage et de
+mouvement et les éléments du jeu sont créer en fonction des composants que peut avoir une entité.
+
+2. Le rôle du fichier src/system/move_system.ml est de faire bouger tout élément qui ont une vitesse,
+ici seul notre pesonnage peut bouger. Si l'élément a une vitesse non nul, fichier ajoute cette la
+valeur de la vitesse à sa position, nous permettant d'aller à gauche, à droite et de sauter et il y
+a une mise à jour à chaque fois que le timer avance. Donc le but de ce fichier est de créer un système
+de mouvement.
+ 
